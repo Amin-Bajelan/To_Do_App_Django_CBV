@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>Document</title>
+</head>
+<body>
+
+<form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="logout-btn">Logout</button>
+</form>
+
+    <h3>You can  create new task here...</h3>
+    <form method="post" action="{% url "add_task" %}" >
+        {% csrf_token %}
+        <button type='submit' class="link-button">Add Task</button>
+    </form>
+
+<hr>
+    {% for i in tasks %}
+        <h2>title: {{ i.title }}</h2>
+
+        <h4>description: {{ i.description }}</h4>
+
+        <form method="post" action="{% url 'toggle_task' i.id %}" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit" class="link-button">
+                {% if  not i.completed %} Complete {% else %} Unfinished {% endif %}
+              </button>
+        </form>
+
+        <br>
+        <form method="post" action="{% url "delete_task" i.id %}">
+            {% csrf_token %}
+            <button type="submit" class="link-button">Delete</button>
+        </form>
+
+        <form method="post" action="{% url "edit_task" i.id %}">
+            {% csrf_token %}
+            <button type="submit" class="link-button">Edit</button>
+        </form>
+        <h6>create time: {{ i.created_at }}</h6>
+        {% if i.is_edited == True %}
+            <h6>Edited at: {{ i.updated_at }}</h6>
+        {% endif %}
+        <hr>
+    {% endfor %}
+
+
+</body>
+</html>
