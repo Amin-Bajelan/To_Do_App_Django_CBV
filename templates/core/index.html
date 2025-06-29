@@ -18,5 +18,11 @@
     <button value="submit" class="link-button">signup</button>
 </form>
 
+<form method="post" action="{% url "task-list_api" %}">
+    {% csrf_token %}
+    <button value="submit" class="link-button">API</button>
+</form>
+
+
 </body>
 </html>
