@@ -27,6 +27,8 @@ class ToggleTaskView(View, LoginRequiredMixin, ):
     def post(self, request, id):
         task = get_object_or_404(Task, id=id, owner=self.request.user)
         task.completed = not task.completed
+        if task.completed:
+            task.due_date = timezone.now()
         task.save()
         return redirect('task_list')
 
