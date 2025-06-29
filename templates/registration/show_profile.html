@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static "style_profile.css" %}">
+</head>
+<body>
+
+
+    <form method="post" action="{% url "task_list" %}" >
+        {% csrf_token %}
+        <button type='submit' class="link-button">Back</button>
+    </form>
+<br>
+    <div class="profile-container">
+        {% if profile.profile_pic %}
+            <img src="{{ profile.profile_pic.url }}" alt="Profile Picture" class="profile-pic">
+        {% else %}
+            <img src="/static/default-avatar.png" alt="Default Avatar" class="profile-pic">
+        {% endif %}
+        <h3 class="profile-name">{{ profile.first_name }} {{ profile.last_name }}</h3>
+        <p class="profile-bio">{{ profile.bio }}</p>
+    </div>
+</body>
+</html>

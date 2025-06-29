@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import User
+from .models import User,Profile
 
 
 class CustomUserAdmin(UserAdmin):
@@ -28,4 +28,11 @@ class CustomUserAdmin(UserAdmin):
     ordering = ("email",)
 
 
+class ProfileAdmin(admin.ModelAdmin):
+    model = Profile
+    list_display = ["user", "first_name", "last_name"]
+    list_filter = ['user', 'first_name', 'last_name']
+
+
 admin.site.register(User, CustomUserAdmin)
+admin.site.register(Profile, ProfileAdmin)
