@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'task',
     'accounts',
     'rest_framework',
-    'rest_framework_swagger',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
