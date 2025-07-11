@@ -1,6 +1,8 @@
 from django.utils import timezone
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DeleteView, UpdateView, CreateView
+
+
 from .models import Task
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
@@ -56,3 +58,6 @@ class AddTask(CreateView, LoginRequiredMixin):
         form.instance.owner = self.request.user
         form.save()
         return redirect('task_list')
+
+
+
