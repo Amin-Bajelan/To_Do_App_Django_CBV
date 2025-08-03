@@ -40,6 +40,7 @@
 
   <h2>⚙️ API for Superusers</h2>
   <ul>
+    <li>documentation api <strong>Swagger</strong></li> 
     <li>Access all tasks across the system</li>
     <li>Add or delete tasks for any user</li>
     <li>Apply filters to task queries</li>
