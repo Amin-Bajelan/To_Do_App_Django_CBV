@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Task Management App</title>
+
 </head>
 <body>
   <h1>✅ Task Management App with Django and restapi</h1>
