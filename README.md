@@ -54,6 +54,6 @@
 
 
   <h2>👨‍💻 Developer</h2>
-  <p>Created with 💙 by <strong>Mohamad</strong></p>
+  <p>Created by <strong>Amin</strong></p>
 </body>
 </html>
