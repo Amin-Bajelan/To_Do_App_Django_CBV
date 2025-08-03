@@ -9,7 +9,7 @@
   <p>This project is built using the <strong>Django</strong> framework and is fully containerized with <strong>Docker</strong>. It includes user authentication, task creation/editing, and a RESTful API for superuser-level control.</p>
     <h2>🚀 Setup Instructions</h2>
   <ol>
-    <li>Clone repo: <code>git clone =https://github.com/Amin-Bajelan/To_Do_App_Django_CBV</code></li>
+    <li>Clone repo: <code>git clone https://github.com/Amin-Bajelan/To_Do_App_Django_CBV</code></li>
     <li>Install packages: <code>pip install -r requirements.txt</code></li>
     <li>Run migrations: <code>python manage.py migrate</code></li>
     <li>Start server: <code>python manage.py runserver</code></li>
